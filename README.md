@@ -1,2 +1,2 @@
 # hello-world
-A place ideas, resources, and other non-project specific things
+A place for ideas, resources, and other non-project specific things
