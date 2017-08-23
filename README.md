@@ -1,2 +1,3 @@
-# hello-world
-A place for ideas, resources, and other non-project specific things.
+# README
+
+ A place for VBA business solutions that I find useful in my business experience. 
