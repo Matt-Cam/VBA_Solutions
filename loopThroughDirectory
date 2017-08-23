@@ -1,0 +1,27 @@
+Sub ReplaceJustLogo()
+    Dim wrd As Word.Application
+    Set wrd = CreateObject("word.application")
+    wrd.Visible = True
+    ' AppActivate wrd.Name
+     'Change the directory to YOUR folder's path
+    FName = Dir("\\dc\desktop$\matt.cameron\Desktop\Manufacturing Spec Sheets\*.docx")
+    Do While (FName <> "")
+        With wrd
+             'Change the directory to YOUR folder's path
+            .Documents.Open ("\\dc\desktop$\matt.cameron\Desktop\Manufacturing Spec Sheets\" & FName)
+            If .ActiveWindow.View.SplitSpecial = wdPaneNone Then
+                .ActiveWindow.ActivePane.View.Type = wdPrintView
+            Else
+                .ActiveWindow.View.Type = wdPrintView
+            End If
+            .ActiveWindow.ActivePane.View.SeekView = wdSeekCurrentPageHeader
+            .Selection.WholeStory
+            If .Selection.InlineShapes.Count <> 0 Then .Selection.InlineShapes(1).Delete
+            .Selection.Paste
+            .ActiveDocument.Save
+            .ActiveDocument.Close
+        End With
+        FName = Dir
+    Loop
+    Set wd = Nothing
+End Sub
