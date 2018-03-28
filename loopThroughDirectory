@@ -1,3 +1,6 @@
+' this code loops through a directory and replaces the top logo with a different logo of your selection
+' to use, replace different directory paths with those on your personal machine
+
 Sub ReplaceJustLogo()
     Dim wrd As Word.Application
     Set wrd = CreateObject("word.application")
